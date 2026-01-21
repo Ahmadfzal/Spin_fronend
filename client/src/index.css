@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Playful Vibrant Theme */
+  --font-display: 'Fredoka', cursive;
+  --font-body: 'Nunito', sans-serif;
+
+  /* Space-separated HSL values */
+  --background: 260 100% 15%; /* Deep purple night sky */
+  --foreground: 0 0% 100%;
+
+  --primary: 45 100% 50%; /* Golden Yellow */
+  --primary-foreground: 260 100% 15%;
+
+  --secondary: 190 100% 50%; /* Electric Cyan */
+  --secondary-foreground: 260 100% 15%;
+
+  --accent: 330 100% 50%; /* Hot Pink */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --muted: 260 50% 25%;
+  --muted-foreground: 260 30% 70%;
+
+  --card: 260 60% 20%;
+  --card-foreground: 0 0% 100%;
+  --border: 260 50% 30%;
+
+  --radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent selection:text-white;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-wide;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+/* Wheel specific styles */
+.wheel-container {
+  perspective: 1000px;
+}
