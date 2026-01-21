@@ -27,6 +27,10 @@ export function SpinWheel() {
   const [result, setResult] = useState<string | null>(null);
   const spinTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const targetRotationRef = useRef<number>(0);
+  const user = {
+  coins: 100000,
+  freeSpins: 5
+};
 
   const { data: user } = useQuery({ queryKey: ["/api/user"] });
   const createSpin = useCreateSpin();
